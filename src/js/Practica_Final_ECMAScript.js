@@ -79,7 +79,7 @@ class Usuario {
     static listaUsuarios = new Array();
 
     constructor(nombre, nombreUser, email, empresa, direccion, url) {
-        this.#idUser = Usuario.listaUsuarios.length + 1;
+        this.#idUser = Usuario.listaUsuarios.length;
         this.#nombre = nombre;
         this.#nombreUser = nombreUser;
         this.#email = email;
@@ -121,3 +121,23 @@ const userPrueba = new Usuario("Prueba Practica Final",
                                 );
 
 console.log(`Ejercicio 9 ==> ${userPrueba.toString()}`)
+
+// Ejercicio 10
+function crearUsuarioDesdeJson(objetoJson) {
+    return new Usuario(objetoJson.name, objetoJson.username, objetoJson.email,
+        objetoJson.company.name, {calle : objetoJson.address.street, ciudad: objetoJson.address.city, codigoPostal : objetoJson.address.zipcode},
+        objetoJson.url);
+}
+
+// Ejercicio 11
+function crearArrayObjetosJSON() {
+    let arrayObjetosJSON = new Array();
+    json.forEach(element => arrayObjetosJSON.push(crearUsuarioDesdeJson(element)));
+
+    return arrayObjetosJSON;
+}
+
+console.log('Ejercicio 11 ==> array de objetos creados: ');
+console.log(crearArrayObjetosJSON());
+
+
