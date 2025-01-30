@@ -1,4 +1,4 @@
-import { json } from './json.js';
+
 
 // Ejercicio 2
 sessionStorage.setItem("practica", "Práctica Final ECMAScript 2025");
@@ -51,7 +51,6 @@ fotoCentralMain.addEventListener('click', function() {
 });
 
 // Ejercicio 7
-// TODO: Hacemos este preocedimiento añadiendo un "export en json.js"
 const arrayNombresJSON = new Array();
 json.forEach(element => {
     arrayNombresJSON.push(element.name);
@@ -93,11 +92,15 @@ class Usuario {
     }
 
     static getId(url) {
-        return Usuario.listaUsuarios.find(element => element.#url === url);
+        return url.split('/')[this.length - 1];
+    }
+
+    getNombre() {
+        return this.#nombre;
     }
 
     toString() {
-        return (`idUser: ${Usuario.getId(this.#url).#idUser}, 
+        return (`idUser: ${Usuario.getId(this.#url)}, 
             Nombre : ${this.#nombre}, 
             NombreUser : ${this.#nombreUser},
             Email : ${this.#email},
@@ -138,6 +141,12 @@ function crearArrayObjetosJSON() {
 }
 
 console.log('Ejercicio 11 ==> array de objetos creados: ');
-console.log(crearArrayObjetosJSON());
+let arrayObjetosJSON = crearArrayObjetosJSON();
+console.log(arrayObjetosJSON);
 
+// Ejercicio 12 - Creamos la variable directamente en el ejercicio anterior.
+console.log('Ejercicio 12 ==> Nombres incluidos en el array:')
+for (element of arrayObjetosJSON) {
+    console.log(element.getNombre());
+}
 
