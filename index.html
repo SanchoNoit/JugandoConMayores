@@ -89,7 +89,52 @@
                         </a>
                     </li>
 
+                    <li class="nav-item" id="botonMostrarUsuariosEj15" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <a class="nav-link active">
+                            <i class="fa-solid fa-user-group"></i>
+                            - Usuarios
+                        </a>
+                          
+                    </li>
+
                 </ul>
+
+                <!-- Modal de los ejercicios 15, 16-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal Ejercicio 15</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container border p-2 m-2">
+                                <select id="selectModalEj16">
+                                    <option value="Seleccione_ciudad" selected>Seleccione ciudad</option>
+                                </select>
+                                <br>
+                                <br>
+                                <p style="text-decoration: underline;">Objetos ordenados alfabéticamente por nombre:</p>
+                                <div id="contenidoListaModalEj15"></div>
+                            </div>
+                            
+                            <div>
+                                <select id="selectFiltrarUsuarios">
+                                    <option value="Seleccione usuario" selected>Seleccione usuario</option>
+                                </select>
+                                <div id="divInfoUsuarioSeleccionado">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar modal</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
+                  
 
                 <!-- Menú dropdown con los juegos ofrecidos -->
                 <div class="dropdown dropstart me-3">
